@@ -21,7 +21,7 @@ public class LoginDetails {
 	private Integer id;
 	
 	@Column(name="name",nullable = false)
-	private String Name;
+	private String name;
 	
 	@Column(name="login_id",nullable = false,unique = true)
 	private String LoginId;
@@ -38,11 +38,11 @@ public class LoginDetails {
 	}
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		name = name;
 	}
 
 	public String getLoginId() {
@@ -63,7 +63,7 @@ public class LoginDetails {
 		builder.append("LoginDetails [id=");
 		builder.append(id);
 		builder.append(", Name=");
-		builder.append(Name);
+		builder.append(name);
 		builder.append(", LoginId=");
 		builder.append(LoginId);
 		builder.append(", password=");
