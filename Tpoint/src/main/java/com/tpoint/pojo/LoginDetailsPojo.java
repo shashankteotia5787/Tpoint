@@ -13,6 +13,9 @@ public class LoginDetailsPojo {
 	@JsonProperty("PASSWORD")
 	private String password;
 	
+	
+	@JsonProperty("NAME")
+	private String name;
 
 	public String getUserName() {
 		return userName;
