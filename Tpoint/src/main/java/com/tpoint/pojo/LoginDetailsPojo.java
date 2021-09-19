@@ -14,6 +14,7 @@ public class LoginDetailsPojo {
 	private String password;
 	
 
+	
 	public String getUserName() {
 		return userName;
 	}
