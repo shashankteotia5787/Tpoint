@@ -14,19 +14,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Entity
 @Table(name = "login_details")
 public class LoginDetails {
-	
+
 	@Id
-	@Column(name="id")
+	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	
-	@Column(name="name",nullable = false)
+
+	@Column(name = "name", nullable = false)
 	private String name;
-	
-	@Column(name="login_id",nullable = false,unique = true)
+
+	@Column(name = "login_id", nullable = false, unique = true)
 	private String LoginId;
-	
-	@Column(name="password",nullable = false)
+
+	@Column(name = "password", nullable = false)
 	private String password;
 
 	public Integer getId() {
@@ -57,6 +57,10 @@ public class LoginDetails {
 		return password;
 	}
 
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -71,11 +75,5 @@ public class LoginDetails {
 		builder.append("]");
 		return builder.toString();
 	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
-	
 
 }
