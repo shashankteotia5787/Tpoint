@@ -21,6 +21,7 @@ public class GetDataImpl implements GetData {
 		LoginDetails loginDetails = new LoginDetails();
 		loginDetails.setLoginId(loginDetailsPojo.getUserName());
 		loginDetails.setPassword(loginDetailsPojo.getPassword());
+		loginDetails.setName(loginDetailsPojo.getName());
 		try {
 			loginDetailsRepo.save(loginDetails);
 			loginResponsePojo.setSuccess("Details inserted successfully ");

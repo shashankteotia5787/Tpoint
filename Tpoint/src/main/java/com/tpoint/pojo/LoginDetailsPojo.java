@@ -13,7 +13,9 @@ public class LoginDetailsPojo {
 	@JsonProperty("PASSWORD")
 	private String password;
 	
-	
+	@JsonProperty("NAME")
+	private String name;
+
 	public String getUserName() {
 		return userName;
 	}
@@ -30,6 +32,14 @@ public class LoginDetailsPojo {
 		this.password = password;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -37,9 +47,13 @@ public class LoginDetailsPojo {
 		builder.append(userName);
 		builder.append(", password=");
 		builder.append(password);
+		builder.append(", name=");
+		builder.append(name);
 		builder.append("]");
 		return builder.toString();
 	}
+
+	
 	
 	
 	

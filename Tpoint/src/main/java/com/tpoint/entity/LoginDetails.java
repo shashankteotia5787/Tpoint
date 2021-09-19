@@ -20,13 +20,13 @@ public class LoginDetails {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
-	@Column(name="name")
+	@Column(name="name",nullable = false)
 	private String Name;
 	
-	@Column(name="login_id")
+	@Column(name="login_id",nullable = false,unique = true)
 	private String LoginId;
 	
-	@Column(name="password")
+	@Column(name="password",nullable = false)
 	private String password;
 
 	public Integer getId() {
