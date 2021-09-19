@@ -4,6 +4,16 @@
 # Log file
 *.log
 
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.class
+
+
 # BlueJ files
 *.ctxt
 
