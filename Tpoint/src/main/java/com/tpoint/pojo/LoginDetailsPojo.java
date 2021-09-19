@@ -13,7 +13,6 @@ public class LoginDetailsPojo {
 	@JsonProperty("PASSWORD")
 	private String password;
 	
-
 	
 	public String getUserName() {
 		return userName;
