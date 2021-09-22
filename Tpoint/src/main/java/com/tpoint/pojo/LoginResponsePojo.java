@@ -12,6 +12,19 @@ public class LoginResponsePojo {
 
 	@JsonProperty("Failure")
 	private String failed;
+	
+	@JsonProperty("RESPONSE")
+	private String response;
+	
+	
+
+	public String getResponse() {
+		return response;
+	}
+
+	public void setResponse(String response) {
+		this.response = response;
+	}
 
 	public String getSuccess() {
 		return success;
@@ -32,10 +45,12 @@ public class LoginResponsePojo {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("LoginPojo [success=");
+		builder.append("LoginResponsePojo [success=");
 		builder.append(success);
 		builder.append(", failed=");
 		builder.append(failed);
+		builder.append(", response=");
+		builder.append(response);
 		builder.append("]");
 		return builder.toString();
 	}
