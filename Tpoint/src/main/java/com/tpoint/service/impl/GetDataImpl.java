@@ -2,6 +2,8 @@ package com.tpoint.service.impl;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -22,8 +24,6 @@ public class GetDataImpl implements GetData {
 	@Autowired
 	private LoginDetailsRepo loginDetailsRepo;
 	
-	@Autowired
-	private RestTemplate RT;
 
 	@Override
 	public LoginResponsePojo Logindetails(LoginDetailsPojo loginDetailsPojo) {
@@ -33,20 +33,6 @@ public class GetDataImpl implements GetData {
 		loginDetails.setLoginId(loginDetailsPojo.getUserName());
 		loginDetails.setPassword(loginDetailsPojo.getPassword());
 		loginDetails.setName(loginDetailsPojo.getName());
-		ResponseEntity<String> response=RT.getForEntity("https://www.javatpoint.com/java-tutorial", String.class);
-		String res=null;
-		 Document doc=null;
-		try {
-	//	JsonNode root = ob.readTree(response.getBody());
-	//	System.err.println(root);
-			 res=ob.convertValue(response.getBody(), String.class);
-			  doc = Jsoup.parse(res);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		System.out.println(doc);
-		
 		try {
 			loginDetailsRepo.save(loginDetails);
 			loginResponsePojo.setSuccess("Details inserted successfully ");
