@@ -18,6 +18,7 @@ public class TpointApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TpointApplication.class, args);
 	}
+
 	
 	@Bean
 	public RestTemplate restTemplate() {
